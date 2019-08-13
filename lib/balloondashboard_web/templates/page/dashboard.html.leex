@@ -1,0 +1,19 @@
+<div class="">
+  <%= if @state == :unset do %>
+    <button phx-click="prime">Prime Balloon</button>
+  <% end %>
+  <%= if @state == :primed do %>
+    <button phx-click="drop">Drop Balloon</button>
+  <% end %>
+  <%= if @state == :priming do %>
+    <button phx-click="null">Priming</button>
+    <div>
+      <%= if @counter == 0 do %>
+        <h1>Primed</h1>
+      <% else %>
+        <h1>Priming: <%= @counter %></h1>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="ct-chart ct-perfect-fourth"></div>
+</div>
